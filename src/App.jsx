@@ -1,13 +1,6 @@
-import React from 'react'
-import './App.css'
-import Dashboard from './pages/admin/Dashboard'
+import { RouterProvider } from "react-router-dom";
+import { router } from "./utils/router";
 
-function App() {
-  return (
-    <div>
-      <Dashboard/>
-    </div>
-  )
+export default function App() {
+  return <RouterProvider router={router} />;
 }
-
-export default App

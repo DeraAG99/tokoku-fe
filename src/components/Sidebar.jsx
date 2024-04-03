@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import Kategpri from '../pages/admin/Kategori';
+import Kategori from '../pages/admin/Kategori';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   const [activeMenuItem, setActiveMenuItem] = useState('Dashboard');
@@ -16,7 +17,7 @@ const Sidebar = () => {
       </div>
     ),
     Kategori: (
-      <Kategpri/>
+      <Link to={"/Kategori"} className='text-center'>aw</Link>
     ),
     Produk: (
       <div>

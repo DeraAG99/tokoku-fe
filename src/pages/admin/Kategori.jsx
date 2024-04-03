@@ -1,5 +1,5 @@
 import React from "react";
-const Kategpri = () => {
+const Kategori = () => {
     return (  
         <div>
             <p>test</p>
@@ -7,4 +7,4 @@ const Kategpri = () => {
     );
 }
 
-export default Kategpri;
+export default Kategori;
