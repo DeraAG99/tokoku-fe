@@ -9,7 +9,7 @@ const Mainpage = ({children}) => {
             <Header/>
             <Sidebar 
                 renderContent= {children}
-                menusItem= {adminMenus}
+                menus= {adminMenus}
             />
         </div>
     )
