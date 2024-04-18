@@ -1,9 +1,12 @@
 import React from "react";
+import Mainpage from "../../components/Mainpage";
 const Kategori = () => {
     return (  
-        <div>
-            <p>test</p>
-        </div>
+        <Mainpage>
+            <div>
+                Test Page Kategori
+            </div>
+        </Mainpage>
     );
 }
 

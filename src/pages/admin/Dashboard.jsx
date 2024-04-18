@@ -3,7 +3,7 @@ import Mainpage from "../../components/Mainpage";
 const Dashboard = () => {
     return ( 
         <Mainpage>
-    
+            <div>test dashboard</div>
         </Mainpage>
      );
 }
