@@ -10,6 +10,7 @@ export default function useNotification() {
     if (action?.data) {
       setNotify(true);
       setNotifyMessage(action?.data?.message);
+      console.log(data.message);
       setTimeout(() => {
         setNotify(false);
       }, 3000);

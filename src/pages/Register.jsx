@@ -13,29 +13,43 @@ function Register() {
     <Layout>
       <HeroContainer>
         <Title title={"Register Akun Tokoku"} />
-        {notify && <Notify message={notifyMessage} goto='/' />}
-        <Form method='post' action='/register'>
-          <div className='flex flex-col gap-4'>
+        {notify && <Notify message={notifyMessage} goto="/" />}
+        <Form method="post" action="/register">
+          <div className="flex flex-col gap-4">
             <input
-              type='text'
-              name='username'
-              placeholder='username'
-              className='input input-bordered w-full rounded-md'
+              type="text"
+              name="username"
+              placeholder="Username"
+              className="input input-bordered w-full rounded-md"
               required
             />
             <input
-              type='password'
-              name='password'
-              placeholder='******'
-              className='input input-bordered w-full rounded-md'
+              type="password"
+              name="password"
+              placeholder="******"
+              className="input input-bordered w-full rounded-md"
               required
             />
-            <button type='submit' className='btn btn-primary rounded-md'>
+            <input
+              type="text"
+              name="nama"
+              placeholder="Nama"
+              className="input input-bordered w-full rounded-md"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              className="input input-bordered w-full rounded-md"
+              required
+            />
+            <button type="submit" className="btn btn-primary rounded-md">
               Register
             </button>
           </div>
         </Form>
-        <Link to={"/"} className='text-center'>
+        <Link to={"/"} className="text-center">
           Or Login Here
         </Link>
       </HeroContainer>

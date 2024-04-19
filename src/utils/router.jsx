@@ -6,6 +6,8 @@ import Pesanan from "../pages/admin/Pesanan";
 import Produk from "../pages/admin/Produk";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import { registerAction } from "../actions/users.action";
+import ErrorPage from "../pages/Error/ErrorPage";
 
 export const router = createBrowserRouter([
   {
@@ -13,8 +15,10 @@ export const router = createBrowserRouter([
     element: <Login />,
   },
   {
-    path: "/Register",
+    path: "/register",
     element: <Register />,
+    errorElement: <ErrorPage />,
+    action: registerAction,
   },
   {
     path: "/admin/dashboard",
