@@ -1,19 +1,20 @@
 import React from "react";
+import HeroContainer from "../components/HeroContainer";
+import Layout from "../components/Layout";
 import Title from "../components/Title";
 import { Form, Link } from "react-router-dom";
-import Layout from "../components/Layout";
-import HeroContainer from "../components/HeroContainer";
 import useNotification from "../hooks/useNotification";
 import Notify from "../components/Notify";
 
-function Login() {
+function Register() {
   const { notify, notifyMessage } = useNotification();
+
   return (
     <Layout>
       <HeroContainer>
-        {notify && <Notify message={notifyMessage} />}
-        <Title title={"Login Akun Tokoku"} />
-        <Form method='post' action='/'>
+        <Title title={"Register Akun Tokoku"} />
+        {notify && <Notify message={notifyMessage} goto='/' />}
+        <Form method='post' action='/register'>
           <div className='flex flex-col gap-4'>
             <input
               type='text'
@@ -30,16 +31,16 @@ function Login() {
               required
             />
             <button type='submit' className='btn btn-primary rounded-md'>
-              Login
+              Register
             </button>
           </div>
         </Form>
-        <Link to={"/register"} className='text-center'>
-          Or Register Here
+        <Link to={"/"} className='text-center'>
+          Or Login Here
         </Link>
       </HeroContainer>
     </Layout>
   );
 }
 
-export default Login;
+export default Register;
