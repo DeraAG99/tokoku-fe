@@ -6,14 +6,19 @@ export default function useNotification() {
   const [notify, setNotify] = useState(false);
   const [notifyMessage, setNotifyMessage] = useState("");
 
+  console.log(action);
   useEffect(() => {
-    if (action?.data) {
-      setNotify(true);
-      setNotifyMessage(action?.data?.message);
-      console.log(data.message);
-      setTimeout(() => {
-        setNotify(false);
-      }, 3000);
+    if (action?.response) {
+      if (action?.response?.data) {
+        setNotify(true);
+        setNotifyMessage(action?.response?.data?.message);
+
+        setTimeout(() => {
+          setNotify(false);
+        }, 3000);
+      } else {
+        console.error("Message property not found in API response");
+      }
     }
   }, [action]);
 
