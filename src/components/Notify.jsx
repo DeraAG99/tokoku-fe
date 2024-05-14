@@ -1,13 +1,29 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-function Notify({ message, goto = "/" }) {
+function Notify({ message, errors = [], goto = "/" }) {
   const navigate = useNavigate();
+
+  const renderErrorList = () => {
+    if (errors && errors.length > 0) {
+      return (
+        <ul className="list-disc list-inside">
+          {errors.map((error, index) => (
+            <li key={index} className="">
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
+    return null;
+  };
 
   return (
     <div className="toast toast-top toast-center">
       <div className="alert">
-        <span>{message}</span>
+        {message && <p className="message">{message}</p>}
+        <div className="">{renderErrorList()}</div>
         <div onClick={() => navigate(goto)} className="cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +36,7 @@ function Notify({ message, goto = "/" }) {
               strokeLinejoin="round"
               strokeWidth="2"
               d="M6 18L18 6M6 6l12 12"
-            ></path>
+            />
           </svg>
         </div>
       </div>

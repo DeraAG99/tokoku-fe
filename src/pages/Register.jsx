@@ -7,13 +7,14 @@ import useNotification from "../hooks/useNotification";
 import Notify from "../components/Notify";
 
 function Register() {
-  const { notify, notifyMessage } = useNotification();
+  const { notify, errors, notifyMessage } = useNotification();
+  console.log(errors);
 
   return (
     <Layout>
       <HeroContainer>
         <Title title={"Register Akun Tokoku"} />
-        {notify && <Notify message={notifyMessage} goto="/" />}
+        {notify && <Notify errors={errors} message={notifyMessage} />}
         <Form method="post" action="/register">
           <div className="flex flex-col gap-4">
             <input
